@@ -1,0 +1,15 @@
+svg {
+    width: 50%;
+    height: auto;
+    position: relative;
+    left: 25%;
+}
+
+path {
+    fill:transparent;
+    stroke:#000000;
+}
+
+#PK-SD:hover, #PK-BA:hover, #PK-GB:hover, #PK-IS:hover, #PK-JK:hover, #PK-KP:hover, #PK-PB:hover, #PK-TA:hover {
+    fill: #8C0618;
+}
