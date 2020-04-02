@@ -13,3 +13,25 @@ footer
     color: white;
     font-size: small;
 }
+
+
+svg {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+}
+
+path {
+    fill:transparent;
+    stroke: white;
+}
+
+#PK-SD:hover, #PK-BA:hover, #PK-GB:hover, #PK-IS:hover, #PK-JK:hover, #PK-KP:hover, #PK-PB:hover, #PK-TA:hover {
+    fill: #8C0618;
+}
+
+.padded-row {
+    padding-top: 10px;
+    
+}
