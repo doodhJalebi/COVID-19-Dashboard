@@ -1,11 +1,5 @@
 
 window.onload = function () {
-	/*CanvasJS.addColorSet("shades", [//colorSet Array
-		"#91CCD9",
-		"#02735E",
-		"#03A678",
-		"#F2C46D",
-		"#F26B6B"]);*/
 	CanvasJS.addColorSet("shades", [//colorSet Array
 		"#CC2314",
 		"#F2561D",
@@ -16,7 +10,6 @@ window.onload = function () {
 var chart = new CanvasJS.Chart("chartContainer", {
 	animationEnabled: true,
 	colorSet: "shades",
-	//backgroundColor: "#FCFFDB",
 	backgroundColor: "#f4f0ec",
 	
 	title:{
