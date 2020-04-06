@@ -1,4 +1,6 @@
 
+var linechart;
+
 window.onload = function () {
 	
 	//var a = document.getElementById("PK-PB");
@@ -11,7 +13,7 @@ window.onload = function () {
 		"#F2C53D",
 		"#F2E641"]);
 	
-	var chart = new CanvasJS.Chart("chartContainer", {
+	/*var chart = new CanvasJS.Chart("chartContainer", {
 		animationEnabled: true,
 		colorSet: "shades",
 		backgroundColor: "#f4f0ec",
@@ -47,24 +49,26 @@ window.onload = function () {
 				{ y: 7, label: "Peshawar" }
 			]
 		}]
-	});
+	});*/
 	
-	var linechart = new CanvasJS.Chart("lineChartContainer", {
+	var options = {
 		animationEnabled: true,
 		width: 650,
-		height: 250,
+		height: 400,
+		backgroundColor: "#260104",
 		title:{
 			text: "Time Series Graph for Confirmed Cases",
-			fontFamily: "Rockwell"
+			fontFamily: "Rockwell",
+			fontColor: "#FFFFFF"
 		},
 		axisX: {
 			title: "Date",
+			labelFontColor: "#FFFFFF",
 			valueFormatString: "DD MMM,YY"
 		},
 		axisY: {
+			labelFontColor: "#FFFFFF",
 			title: "Number of Cases",
-			//includeZero: false,
-			//suffix: " °C"
 		},
 		toolTip:{
 			shared: true
@@ -82,23 +86,31 @@ window.onload = function () {
 				{ x: new Date(2020,6,30), y: 500 }
 			]
 		}]
-	});
+	};
+	
+	var linechart = new CanvasJS.Chart("lineChartContainer", options);
 
-	chart.render();
+	//chart.render();
 	linechart.render();
+	
+	$("#PK-PB").click(function () {
+		var len = options.data[0].dataPoints.length;
+		options.title.text = "Confirmed cases in Punjab";
+		for (var i = 0; i < len; i++){
+			//linechart.options.data[0].dataPoints[i].x = 15 - Math.random() * 10;
+			options.data[0].dataPoints[i].y = 15 - Math.random() * 10;
+		}
+		
+		(new CanvasJS.Chart("lineChartContainer", options)).render();
+	});
 	
 }
 
 function popup(e) {
-	console.log('clicked')
-	
 	var tooltip = document.getElementById("tooltip");
 	var province;
 	
-	if (tooltip.style.display == "block"){
-		tooltip.style.display = "none"
-	}
-	else{
+	if (tooltip.style.display == "none" || (tooltip.style.display == "block")){
 		tooltip.style.display = "block";
 		if (e.target.id === "PK-PB"){
 			province = "Punjab";
@@ -124,10 +136,14 @@ function popup(e) {
 		else if (e.target.id === "PK-BA"){
 			province = "Balochistan";
 		}
-		
+		else if (province === undefined){
+			tooltip.style.display = "none";
+			return
+		}
 		tooltip.innerHTML = "<span class='heading'>"+ province + "</span> <br /> Total cases: <span style='color: blue; font-weight: bold;'> 500 </span> <br /> Recovered: <span style='color: green; font-weight: bold;'> 300 </span> <br /> Deaths: <span style='color: red; font-weight: bold;'> 30 </span>"
 	
 		tooltip.style.left = e.pageX - 50 + 'px';
 		tooltip.style.top = e.pageY -50 + 'px';
 	}
 }
+
