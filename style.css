@@ -5,15 +5,25 @@ body
 footer
 {
     background-color: #8C0618;
-    position: fixed;
     left: 0;
     bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
     width: 100%;
     height: 7%;
     color: white;
     font-size: small;
 }
 
+canvas {
+  background-color: white;
+}
+
+.donut-chart {
+  background-color: white;
+  min-height: 100%;
+  padding-bottom: 3%;
+}
 
 svg {
     position: relative;
@@ -23,12 +33,81 @@ svg {
 }
 
 path {
-    fill:transparent;
+    fill:black;
     stroke: white;
+    transition-duration: 0.25s;
 }
 
 #PK-SD:hover, #PK-BA:hover, #PK-GB:hover, #PK-IS:hover, #PK-JK:hover, #PK-KP:hover, #PK-PB:hover, #PK-TA:hover {
-    fill: #8C0618;
+    /* fill: #8C0618; */
+    /* fill: #DC5356; */
+    fill: #F0CB69;
+}
+
+.emergency-numbers-heading {
+  padding-top: 10px;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #8C0618;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.emergency-numbers-content {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  font-size: 16px;
+  text-align: left;
+}
+
+
+.general-info-seg {
+  background-color: white;
+  color: #8C0618;
+  padding-top: 3%;
+  padding-bottom: 5%;
+}
+
+.general-info-heading {
+  text-align: center;
+  font-size: 20px;
+  padding-bottom: 3%;
+}
+
+.details-section {
+  margin-top: 2%;
+}
+.details-graph {
+  margin-bottom: 3%;
+  margin-top: 2%;
+}
+
+#footer-text {
+  font-size: 100%;
+}
+
+.top-bottom-padded {
+  padding-top: 3%;
+  
+}
+
+#general-stats {
+  margin-left: 0;
+  margin-right: 5%;
+}
+
+
+#tip {
+  color: white;
+  float: right;
+  font-size: 14px;
 }
 
 .popup {
@@ -58,8 +137,9 @@ path {
 #tooltip {
 	background: cornsilk;
 	border: 1px solid black;
-	border-radius: 5px;
-	padding: 5px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: absolute;
 }
 
 .heading{
@@ -76,6 +156,10 @@ path {
 
 .stats{
 	color: #FFFFFF;
+}
+
+.chart-div {
+  background-color: white !important;
 }
 
 
