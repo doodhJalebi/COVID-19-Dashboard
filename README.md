@@ -1,8 +1,8 @@
 # COVID-19-Dashboard
 Project repository for Habib University's COVID-19 Dashboard.
 
-# TO-DO
-## v1.0
+## TO-DO
+### v1.0
 - Basic tutorial
 - Better colors
 - Some city data
@@ -11,7 +11,7 @@ Project repository for Habib University's COVID-19 Dashboard.
 - Language selection
 - ~~nationwide cases, nationwide recoveries, nationwide deceased~~
 
-## v2.0
+### v2.0
 - Urdu support
 - Tutorial in Urdu
 - About section with references and credits
