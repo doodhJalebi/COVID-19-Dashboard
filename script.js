@@ -82,6 +82,90 @@ var trend_chart_config = {
     type: 'line',
     data: {
         datasets: [{
+                label: 'Recovered Cases',
+                pointBackgroundColor: '#50bf0f',
+                pointBorderColor: '#000000',
+                pointRadius: 4,
+                fill: true,
+                backgroundColor: '#50bf0f',
+                borderColor: '#000000',
+                data: [
+                    {
+                        x: new Date(2019, 11, 25),
+                        y: 2
+                    },{
+                        x: new Date(2020, 0, 25),
+                        y: 3
+                    },{
+                        x: new Date(2020, 1, 25),
+                        y: 6
+                    },{
+                        x: new Date(2020, 2, 25),
+                        y: 10
+                    },{
+                        x: new Date(),
+                        y: 12
+                    }
+                ],
+                borderWidth: 1
+            },  
+            {
+                label: 'Active Cases',
+                pointBackgroundColor: '#f5d400',
+                pointBorderColor: '#000000',
+                pointRadius: 4,
+                fill: true,
+                backgroundColor: '#f5d400',
+                borderColor: '#000000',
+                data: [
+                    {
+                        x: new Date(2019, 11, 25),
+                        y: 2
+                    },{
+                        x: new Date(2020, 0, 25),
+                        y: 5
+                    },{
+                        x: new Date(2020, 1, 25),
+                        y: 10
+                    },{
+                        x: new Date(2020, 2, 25),
+                        y: 25
+                    },{
+                        x: new Date(),
+                        y: 50
+                    }
+                ],
+                borderWidth: 1
+            },
+            {
+                label: 'Deceased Cases',
+                pointBackgroundColor: '#d10d0d',
+                pointBorderColor: '#000000',
+                pointRadius: 4,
+                fill: true,
+                backgroundColor: '#d10d0d',
+                borderColor: '#000000',
+                data: [
+                    {
+                        x: new Date(2019, 11, 25),
+                        y: 2
+                    },{
+                        x: new Date(2020, 0, 25),
+                        y: 10
+                    },{
+                        x: new Date(2020, 1, 25),
+                        y: 50
+                    },{
+                        x: new Date(2020, 2, 25),
+                        y: 55
+                    },{
+                        x: new Date(),
+                        y: 60
+                    }
+                ],
+                borderWidth: 1
+            },
+            {
             label: 'Confirmed Cases',
             pointBackgroundColor: '#f57200',
             pointBorderColor: '#000000',
@@ -105,90 +189,6 @@ var trend_chart_config = {
                 },{
                     x: new Date(),
                     y: 2650
-                }
-            ],
-            borderWidth: 1
-        },
-        {
-            label: 'Active Cases',
-            pointBackgroundColor: '#f5d400',
-            pointBorderColor: '#000000',
-            pointRadius: 4,
-            fill: true,
-            backgroundColor: '#f5d400',
-            borderColor: '#000000',
-            data: [
-                {
-                    x: new Date(2019, 11, 25),
-                    y: 2
-                },{
-                    x: new Date(2020, 0, 25),
-                    y: 5
-                },{
-                    x: new Date(2020, 1, 25),
-                    y: 10
-                },{
-                    x: new Date(2020, 2, 25),
-                    y: 25
-                },{
-                    x: new Date(),
-                    y: 50
-                }
-            ],
-            borderWidth: 1
-        },
-        {
-            label: 'Recovered Cases',
-            pointBackgroundColor: '#50bf0f',
-            pointBorderColor: '#000000',
-            pointRadius: 4,
-            fill: true,
-            backgroundColor: '#50bf0f',
-            borderColor: '#000000',
-            data: [
-                {
-                    x: new Date(2019, 11, 25),
-                    y: 2
-                },{
-                    x: new Date(2020, 0, 25),
-                    y: 3
-                },{
-                    x: new Date(2020, 1, 25),
-                    y: 6
-                },{
-                    x: new Date(2020, 2, 25),
-                    y: 10
-                },{
-                    x: new Date(),
-                    y: 12
-                }
-            ],
-            borderWidth: 1
-        },
-        {
-            label: 'Deceased Cases',
-            pointBackgroundColor: '#d10d0d',
-            pointBorderColor: '#000000',
-            pointRadius: 4,
-            fill: true,
-            backgroundColor: '#d10d0d',
-            borderColor: '#000000',
-            data: [
-                {
-                    x: new Date(2019, 11, 25),
-                    y: 2
-                },{
-                    x: new Date(2020, 0, 25),
-                    y: 10
-                },{
-                    x: new Date(2020, 1, 25),
-                    y: 50
-                },{
-                    x: new Date(2020, 2, 25),
-                    y: 55
-                },{
-                    x: new Date(),
-                    y: 60
                 }
             ],
             borderWidth: 1
