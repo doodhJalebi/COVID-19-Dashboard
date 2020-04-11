@@ -1,12 +1,15 @@
 # COVID-19-Dashboard
 Project repository for Habib University's COVID-19 Dashboard.
 
+## Initial Deployment
+You can find the site running at http://doodhjalebi.github.io
+
 ## TO-DO
 ### v1.0
-- Basic tutorial
+- ~~Basic tutorial~~
 - Better colors
 - Some city data
-- Local deployement
+- ~~Local deployement~~
 - Feedback option
 - Language selection
 - ~~nationwide cases, nationwide recoveries, nationwide deceased~~
