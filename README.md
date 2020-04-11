@@ -7,7 +7,7 @@ You can find the site running <a href="http://doodhjalebi.github.io" target="_bl
 ## TO-DO
 ### v1.0
 - ~~Basic tutorial~~
-- Better colors
+- ~~Better colors~~
 - Some city data
 - ~~Local deployement~~
 - Feedback option
