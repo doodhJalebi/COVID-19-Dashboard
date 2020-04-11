@@ -2,7 +2,7 @@
 Project repository for Habib University's COVID-19 Dashboard.
 
 ## Initial Deployment
-You can find the site running at http://doodhjalebi.github.io
+You can find the site running <a href="http://doodhjalebi.github.io" target="_blank">here.</a>
 
 ## TO-DO
 ### v1.0
