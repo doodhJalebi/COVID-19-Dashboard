@@ -310,7 +310,17 @@ function popup(e) {
 	} */
 	
     //tooltip.style.display = "block";
-    
+    if (e.target.id == 'PK-KP') {
+        if (last_selected_zone == 'PK-TA') {
+            last_selected_zone = 'PK-KP';
+        }
+    }
+
+    else if (e.target.id == 'PK-TA') {
+        if (last_selected_zone == 'PK-KP') {
+            last_selected_zone = 'PK-TA';
+        }
+    }
     
     if (last_selected_zone == e.target.id) {
         console.log("Deselecting " + last_selected_zone);
@@ -435,7 +445,18 @@ function popup(e) {
         for (x of all_provinces) {
             x.style.fill = '#000000';
         }
-        selected_province.style.fill = '#F0CB69';
+        
+        document.getElementById('PK-IS').style.fill = '#d4d4d4';
+        document.getElementById('PK-AK').style.fill = '#585858';
+
+
+        if (selected_province.id == 'PK-KP' || selected_province.id == 'PK-TA') {
+            document.getElementById('PK-KP').style.fill = '#F0CB69';
+            document.getElementById('PK-TA').style.fill = '#F0CB69';
+        }
+        else {
+            selected_province.style.fill = '#F0CB69';
+        }
     }
 };
 
@@ -483,18 +504,115 @@ function reset_to_default() {
     for (x of all_provinces) {
         x.style.fill = '#000000';
     }
+
+    document.getElementById('PK-IS').style.fill = '#d4d4d4';
+    document.getElementById('PK-AK').style.fill = '#585858';
+    
     last_selected_zone = "PK";
     console.log("Reset complete");
 }
 
 function highlight(e) {
-    document.getElementById(e.target.id).style.fill = '#F0CB69';
+    if (e.target.id == 'PK-TA' || e.target.id == 'PK-KP') {
+        document.getElementById('PK-KP').style.fill = '#F0CB69';
+        document.getElementById('PK-TA').style.fill = '#F0CB69';
+    }
+    else {
+        document.getElementById(e.target.id).style.fill = '#F0CB69';
+    }
 }
 
 function highlight_release(e) {
+    if (e.target.id == 'PK-KP') {
+        if (last_selected_zone == 'PK-TA') {
+            last_selected_zone = 'PK-KP';
+        }
+    }
+
+    else if (e.target.id == 'PK-TA') {
+        if (last_selected_zone == 'PK-KP') {
+            last_selected_zone = 'PK-TA';
+        }
+    }
+
     if (e.target.id !== last_selected_zone) {
-        document.getElementById(e.target.id).style.fill = '#000000';
+        if (e.target.id == 'PK-KP' || e.target.id == 'PK-TA') {
+            document.getElementById('PK-KP').style.fill = '#000000';
+            document.getElementById('PK-TA').style.fill = '#000000';
+        }
+        else if (e.target.id == 'PK-IS') {
+            document.getElementById('PK-IS').style.fill = '#d4d4d4';
+        }
+        else if (e.target.id == 'PK-AK') {
+            document.getElementById('PK-AK').style.fill = '#585858';
+        }
+        else {
+            document.getElementById(e.target.id).style.fill = '#000000';
+        }
     }
 }
 
 setInterval(update_tip_text, 5000);
+
+function startIntro(){
+    var intro = introJs();
+      intro.setOptions({
+        steps: [
+          { 
+            element: '#navbar',
+            intro: "Welcome to the COVID19 Dashboard. Click on Next to start the tutorial."
+          },
+          {
+            element: '#navbar',
+            intro: "The dashboard is divided into 3 sections."
+          },
+          {
+            element: '#map',
+            intro: "This is the map. You can click on any province to see its data.",
+            position: 'right'
+          },
+          {
+            element: '#stat-section',
+            intro: 'This is the general statistics section. When you click on a province on the map, the data will be shown here.',
+            position: 'left'
+          },
+          {
+            element: '#donut',
+            intro: "This doughnut chart shows current numbers for confirmed, active, recorvered, and deceased cases. Hover over any colored segment to see the exact number of cases.",
+            position: 'left'
+          },
+          {
+            element: '#donut',
+            intro: 'You can also click on any of the names to remove them from the chart. Try clicking on Confirmed Cases to remove it. You can always click on them again to bring them back!',
+            position: 'left'
+          },
+          {
+              element: '#emergency-info',
+              intro: 'This section has contact information for different hospitals/health centers in the province you selected.',
+              position: 'right'
+          },
+          {
+              element: '#trend-section',
+              intro: 'This is where you can see the trends for each type of case as well a prediction for the next two weeks!',
+              position: 'top'
+          },
+          {
+              element: '#trend-graph',
+              intro: 'This graph shows the trends for the same cases as the doughnut chart. Just like the doughnut chart, you can click on any of the names to remove them from the graph. Click on them again to get them back!',
+              position: 'top'
+          },
+          {
+              element: '#prediction-graph',
+              intro: 'This graph shows a prediction for the number of cases for the next 14 days. Keep in mind that this only a prediction.',
+              position: 'top'
+          },
+          {
+              element: '#prediction-graph',
+              intro: 'And that is all you need to know to use this dashboard. Stay safe, stay in-doors! Click on Done to finish the tutorial.',
+              position: 'top'
+          }
+        ]
+      });
+      intro.setOption('showProgress', true);
+      intro.start();
+  }

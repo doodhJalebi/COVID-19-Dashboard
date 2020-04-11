@@ -3,10 +3,10 @@ Project repository for Habib University's COVID-19 Dashboard.
 
 ## TO-DO
 ### v1.0
-- Basic tutorial
+- ~~Basic tutorial~~
 - Better colors
 - Some city data
-- Local deployement
+- ~~Local deployement~~
 - Feedback option
 - Language selection
 - ~~nationwide cases, nationwide recoveries, nationwide deceased~~
