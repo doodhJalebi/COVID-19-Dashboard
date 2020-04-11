@@ -54,10 +54,14 @@ var donut_config = {
             data: zone_wise_donut_data[zones.PK], // Displays Pakistan wide info by default.
             backgroundColor: [
                 //'#ff482b', peach
-                '#f57200',
+                /*'#f57200',
                 '#f5d400',
                 '#50bf0f',
-                '#d10d0d'
+                '#d10d0d'*/
+                '#c84533',
+                '#908834',
+                '#b74e65',
+                '#d56f28'
             ],
         }],
         labels: ['Confirmed Cases', 'Active Cases', 'Recovered', 'Deceased']
@@ -83,11 +87,11 @@ var trend_chart_config = {
     data: {
         datasets: [{
                 label: 'Recovered Cases',
-                pointBackgroundColor: '#50bf0f',
+                pointBackgroundColor: '#c84533',
                 pointBorderColor: '#000000',
                 pointRadius: 4,
                 fill: true,
-                backgroundColor: '#50bf0f',
+                backgroundColor: '#c84533',
                 borderColor: '#000000',
                 data: [
                     {
@@ -111,11 +115,11 @@ var trend_chart_config = {
             },  
             {
                 label: 'Active Cases',
-                pointBackgroundColor: '#f5d400',
+                pointBackgroundColor: '#908834',
                 pointBorderColor: '#000000',
                 pointRadius: 4,
                 fill: true,
-                backgroundColor: '#f5d400',
+                backgroundColor: '#908834',
                 borderColor: '#000000',
                 data: [
                     {
@@ -139,11 +143,11 @@ var trend_chart_config = {
             },
             {
                 label: 'Deceased Cases',
-                pointBackgroundColor: '#d10d0d',
+                pointBackgroundColor: '#b74e65',
                 pointBorderColor: '#000000',
                 pointRadius: 4,
                 fill: true,
-                backgroundColor: '#d10d0d',
+                backgroundColor: '#b74e65',
                 borderColor: '#000000',
                 data: [
                     {
@@ -167,11 +171,11 @@ var trend_chart_config = {
             },
             {
             label: 'Confirmed Cases',
-            pointBackgroundColor: '#f57200',
+            pointBackgroundColor: '#d56f28',
             pointBorderColor: '#000000',
             pointRadius: 4,
             fill: true,
-            backgroundColor: '#f57200',
+            backgroundColor: '#d56f28',
             borderColor: '#000000',
             data: [
                 {
