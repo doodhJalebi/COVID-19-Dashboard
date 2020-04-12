@@ -38,20 +38,15 @@ path {
     transition-duration: 0.25s;
 }
 
-#PK-IS {
-    fill: #d4d4d4;
-}
-
-#PK-AK {
-  fill: #585858;
-}
-
-/* #PK-SD:hover, #PK-BA:hover, #PK-GB:hover, #PK-IS:hover, #PK-AK:hover, #PK-KP:hover, #PK-PB:hover, #PK-TA:hover {
+#PK-SD:hover, #PK-BA:hover, #PK-GB:hover, #PK-IS:hover, #PK-AK:hover, #PK-KP:hover, #PK-PB:hover, #PK-TA:hover {
+    /* fill: #8C0618; */
+    /* fill: #DC5356; */
     fill: #F0CB69;
-} */
+}
 
-.emergency-numbers-heading {
+.buttons-heading {
   padding-top: 10px;
+  padding-bottom: 2%;
   width: 100%;
   height: 100%;
   display: block;
@@ -61,18 +56,65 @@ path {
   text-align: center;
 }
 
-.emergency-numbers-content {
+.content {
   padding-top: 3%;
   padding-bottom: 3%;
   padding-left: 5%;
   padding-right: 5%;
   width: 100%;
   height: 100%;
-  display: block;
   font-size: 16px;
   text-align: left;
+  display:none;
 }
 
+.btn-primary{
+	background-color: #ffcc66 !important;
+	color: #000000 !important;
+	border-color: #fcc149 !important;
+	box-shadow: none;
+}
+
+.btn-primary:hover{
+	background-color: #fcc149 !important;
+	color: #000000 !important;
+	border-color: #fcb830 !important;
+}
+
+.btn-primary:focus, .btn-primary.focus, 
+.btn-primary:active, .btn-primary.active,
+.btn-primary.active.focus, .btn-primary.active:focus, .btn-primary:active.focus, .btn-primary:active:focus{
+	background-color: #fcb830 !important;
+	color: #000000 !important;
+	border-color: #fcb830 !important;
+	box-shadow: 0 0 0 3px rgba(240, 193, 105, 0.5) !important;
+	
+}
+
+.acknowledgements-heading {
+  padding-top: 10px;
+  padding-bottom: 2%;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-color: #5e1000;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+
+.content2 {
+  padding-top: 3%;
+  padding-bottom: 3%;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  text-align: left;
+  display:block;
+  /*background-color: #5e1000;*/
+}
 
 .general-info-seg {
   background-color: white;
@@ -203,17 +245,4 @@ input[type=checkbox] {
   background-color: white;
   color: #8C0618;
   font-weight: 600;
-}
-
-.test {
-  fill: #b49b38; 
-  fill: #df4529;
-  fill: #dc9526;
-  
-  fill: #c84533;
-  fill: #aa4d89;
-  fill: #908834;
-  fill: #b74e65;
-  fill: #d56f28;
-  fill: #da3f90
 }
