@@ -58,10 +58,10 @@ var donut_config = {
                 '#f5d400',
                 '#50bf0f',
                 '#d10d0d'*/
-                '#c84533',
-                '#908834',
+                '#d56f28',
                 '#b74e65',
-                '#d56f28'
+                '#908834',
+                '#c84533'
             ],
         }],
         labels: ['Confirmed Cases', 'Active Cases', 'Recovered', 'Deceased']
@@ -87,11 +87,11 @@ var trend_chart_config = {
     data: {
         datasets: [{
                 label: 'Recovered Cases',
-                pointBackgroundColor: '#c84533',
+                pointBackgroundColor: '#908834',
                 pointBorderColor: '#000000',
                 pointRadius: 4,
                 fill: true,
-                backgroundColor: '#c84533',
+                backgroundColor: '#908834',
                 borderColor: '#000000',
                 data: [
                     {
@@ -115,11 +115,11 @@ var trend_chart_config = {
             },  
             {
                 label: 'Active Cases',
-                pointBackgroundColor: '#908834',
+                pointBackgroundColor: '#b74e65',
                 pointBorderColor: '#000000',
                 pointRadius: 4,
                 fill: true,
-                backgroundColor: '#908834',
+                backgroundColor: '#b74e65',
                 borderColor: '#000000',
                 data: [
                     {
@@ -143,11 +143,11 @@ var trend_chart_config = {
             },
             {
                 label: 'Deceased Cases',
-                pointBackgroundColor: '#b74e65',
+                pointBackgroundColor: '#c84533',
                 pointBorderColor: '#000000',
                 pointRadius: 4,
                 fill: true,
-                backgroundColor: '#b74e65',
+                backgroundColor: '#c84533',
                 borderColor: '#000000',
                 data: [
                     {
