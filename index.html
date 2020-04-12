@@ -152,15 +152,19 @@
               <div class="col-12">
 
 
-                <div class="row no-gutters">
-                  <div class="col-12">
-                    <div class="buttons-heading">
-                      <button type="button" id="emergency" class="btn btn-primary btn-lg" onclick="expand_buttons(event);">Emergency Contact</button>
-                      <button type="button" id="symptoms" class="btn btn-primary btn-lg" onclick="expand_buttons(event)">Symptoms</button>
-                      <button type="button" id="precautions" class="btn btn-primary btn-lg" onclick="expand_buttons(event)">Precautions</button>
-                    </div>
-                  </div>
-                </div>	
+                <div class="btn-group btn-group-toggle buttons-heading" data-toggle="buttons">
+                  <label class="btn btn-secondary active custom">
+                    <input type="radio" name="options" id="emergency" autocomplete="off" checked onclick="expand_buttons(event)">Emergency Contact Info
+                  </label>
+
+                  <label class="btn btn-secondary custom">
+                    <input type="radio" name="options" id="symptoms" autocomplete="off" onclick="expand_buttons(event)">Symptoms
+                  </label>
+
+                  <label class="btn btn-secondary custom">
+                    <input type="radio" name="options" id="precautions" autocomplete="off" onclick="expand_buttons(event)">Precuations
+                  </label>
+                </div>
 
 
 
@@ -224,30 +228,58 @@
       </div>
 
       <div class="container-fluid">
-        <div class="row justify-content-around">
-          <div class="col-lg-5 col-md-6 col-sm-12 acknowledgements-heading">
-          Acknowledgements
+        <div class="row justify-content-around acknowledgements-row">
+
+
+          <div class="col-lg-6 col-md-8 col-sm-12 contributors-heading"><b>Acknowledgements</b>
+            
             <div class="content2"> <!--edit resources names, add them as hyperlink if possible -->
-            This dashboard uses the following resources for data collection regarding COVID-19.
-            <ul>
-              <li>NIH Daily Situation Reports (till April 3rd)</li>
-              <li>Government of Pakistan dashboard (April 4th onwards)</li>
-            </ul>
+              <table>
+                <th class="heading" colspan="2">Proudly designed, developed and maintained by students and faculty of Habib University.</th>
+                <tr>
+                  <td rowspan="2"><b>Supervisors:</b></td>
+                  <td>Dr. Sarah Hasnain</td>
+                </tr>
+                <tr>
+                  <td>Dr. Abdul Samad</td>
+                </tr>
+                <tr>
+                  <td><b>Data collection:</b></td>
+                  <td>Amna Shoaib</td>
+                </tr>
+                <tr>
+                  <td rowspan="3"><b>Front-end team:</b></td>
+                  <td>Owais Bin Asad</td>
+                </tr>
+                <tr>
+                  <td>Anisa Aisha Ahmed</td>
+                </tr>
+                <tr>
+                  <td>Maheen Anees</td>
+                </tr>
+                <tr>
+                  <td rowspan="3"><b>Back-end team:</b></td>
+                  <td>Sara Mehmood</td>
+                </tr>
+                <tr>
+                  <td>Atif Mehmood</td>
+                </tr>
+                <tr>
+                  <td>Saman Gaziani</td>
+                </tr>
+
+                <tr>
+                  <td rowspan="2"><b>Data Sources:</b></td>
+                  <td>NIH Daily Situation Reports</td>
+                </tr>
+                <tr>
+                  <td>Government of Pakistan Dashboard</td>
+                </tr>
+              </table>
             </div>
           </div>
-          <div class="col-lg-5 col-md-6 col-sm-12 acknowledgements-heading" style="background-color: rgba(144, 136, 52, 0.8);">
-          Contributors
-            <div class="content2"> <!--edit resources names, add them as hyperlink if possible -->
-            The dashboard was created by Habib University faculty and students. The contributors are, 
-            <br> <!--Add any names that I may have forgot -->
-            <ul style="list-style-type: none; padding: 0;">
-              <li> <strong> The faculty members who supervised the project, </strong> Dr. Sarah Hasnain and Dr. Abdul Samad. </li> 
-              <li> <strong> Data collection team, </strong> Amna Shoaib. </li>
-              <li> <strong> Front-end team, </strong> Owais bin Asad, Anisa Aisha Ahmed, and Maheen Anees. </li>
-              <li> <strong> Back-end team, </strong> Atif Mehmood, Sara Mehmood, and Saman Gaziani. </li> 
-            </ul>
-            </div>
-          </div>
+
+
         </div>
         </div>
     
@@ -259,7 +291,7 @@
 
     <footer class="page-footer font-small blue">
 		<div class="footer-copyright text-center py-3">
-			<span id="footer-text">© 2020 Habib University | All rights reserved.</span>
+			<span id="footer-text">© 2020 Habib University</span>
 		</div>
     </footer>
 

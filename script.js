@@ -89,11 +89,11 @@ var trend_chart_config = {
         datasets: [{
                 label: 'Recovered Cases',
                 pointBackgroundColor: '#908834',
-                pointBorderColor: '#000000',
+                pointBorderColor: '#908834',
                 pointRadius: 4,
-                fill: true,
+                fill: false,
                 backgroundColor: '#908834',
-                borderColor: '#000000',
+                borderColor: '#908834',
                 data: [
                     {
                         x: new Date(2019, 11, 25),
@@ -112,16 +112,16 @@ var trend_chart_config = {
                         y: 12
                     }
                 ],
-                borderWidth: 1
+                borderWidth: 3
             },  
             {
                 label: 'Active Cases',
                 pointBackgroundColor: '#b74e65',
-                pointBorderColor: '#000000',
+                pointBorderColor: '#b74e65',
                 pointRadius: 4,
-                fill: true,
+                fill: false,
                 backgroundColor: '#b74e65',
-                borderColor: '#000000',
+                borderColor: '#b74e65',
                 data: [
                     {
                         x: new Date(2019, 11, 25),
@@ -140,16 +140,16 @@ var trend_chart_config = {
                         y: 50
                     }
                 ],
-                borderWidth: 1
+                borderWidth: 3
             },
             {
                 label: 'Deceased Cases',
                 pointBackgroundColor: '#c84533',
-                pointBorderColor: '#000000',
+                pointBorderColor: '#c84533',
                 pointRadius: 4,
-                fill: true,
+                fill: false,
                 backgroundColor: '#c84533',
-                borderColor: '#000000',
+                borderColor: '#c84533',
                 data: [
                     {
                         x: new Date(2019, 11, 25),
@@ -168,16 +168,16 @@ var trend_chart_config = {
                         y: 60
                     }
                 ],
-                borderWidth: 1
+                borderWidth: 3
             },
             {
             label: 'Confirmed Cases',
             pointBackgroundColor: '#d56f28',
-            pointBorderColor: '#000000',
+            pointBorderColor: '#d56f28',
             pointRadius: 4,
-            fill: true,
+            fill: false,
             backgroundColor: '#d56f28',
-            borderColor: '#000000',
+            borderColor: '#d56f28',
             data: [
                 {
                     x: new Date(2019, 11, 25),
@@ -196,7 +196,7 @@ var trend_chart_config = {
                     y: 2650
                 }
             ],
-            borderWidth: 1
+            borderWidth: 3
         }]
     },
     options: {
@@ -236,10 +236,11 @@ var prediction_graph_config = {
     data: {
         datasets: [{
             label: 'Prediction of Cases',
-            pointBackgroundColor: '#F0CB69',
-            pointBorderColor: '#F0CB69',
+            pointBackgroundColor: '#8c0618',
+            pointBorderColor: '#8c0618',
             pointRadius: 5,
-            fill: true,
+            fill: false,
+            borderColor: '#8c0618',
             backgroundColor: '#8C0618',
             data: [
                 {
@@ -265,7 +266,7 @@ var prediction_graph_config = {
                     y: 4800
                 }
             ],
-            borderWidth: 1
+            borderWidth: 3
         }]
     },
     options: {
@@ -558,6 +559,8 @@ function highlight_release(e) {
 }
 
 function expand_buttons(e){
+    console.log("EXPAND BUTTONS CALLED");
+    console.log(e.target.id);
     selected_expansion_button = document.getElementById(e.target.id);
 
 	var emergency_content = document.getElementById("emergency_content");
@@ -592,9 +595,6 @@ function expand_buttons(e){
 		}
 		precautions_content.style.display = "block"
     }
-    
-    selected_expansion_button.style.fill = '#fcb830';
-	
 }
 var emergency = document.getElementById("emergency_content");
 emergency.style.display = "block";
