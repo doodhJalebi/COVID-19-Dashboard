@@ -149,17 +149,36 @@
 
 
             <div class="row no-gutters">
-              <div class="col-12" id="emergency-info">
-                <div class="emergency-numbers-heading">
-                  <span><b>Emergency Contact Information</b></span>
-                  <div class="emergency-numbers-content">
-                    <ul id="center-list" style="list-style-type:none">
-                      <li>National COVID-19 Helpline [1166]</li>
-                      <li id="center-1"></li>
-                      <li id="center-2"></li>
-                      <li id="center-3"></li>
-                    </ul>
-                  </div>
+              <div class="col-12">	
+                <div class="buttons-heading">
+                    <button type="button" id="emergency" class="btn btn-primary btn-lg" onclick="expand_buttons(event);">Emergency Contact</button>
+                    <button type="button" id="symptoms" class="btn btn-primary btn-lg" onclick="expand_buttons(event)">Symptoms</button>
+                    <button type="button" id="precautions" class="btn btn-primary btn-lg" onclick="expand_buttons(event)">Precautions</button>
+                    <div id="emergency_content" class="content">
+                        <ul id="center-list">
+                            <li> National COVID-19 Helpline [1166]  </li>
+                            <li id="center-1">Aga Khan University Hospital, Karachi [021-111-911-911]</li>
+                            <li id="center-2">LUMHS hospital, Hyderabad [+92 322 9213305]</li>
+                            <li id="center-3">Jinnah Postgraduate Medical Centre, Karachi</li>
+                        </ul>
+                    </div>
+                    <div id="symptoms_content" class="content">
+                        <ul>
+                            <span style="block"> You may experience the following symptoms if you have COVID-19.</span>
+                            <li id="center-1">Cough</li>
+                            <li id="center-2">Fever</li>
+                            <li id="center-3">Tiredness</li>
+                            <li id="center-3">Difficulty in breathing (only in severe cases)</li>
+                        </ul>
+                    </div>
+                    <div id="precautions_content" class="content">
+                        <ul style="list-style-type: none;">
+                            <li id="center-1">Wash your hands regularly for 20 seconds, with soap and water or alcohol-based hand rub.</li>
+                            <li id="center-2">Maintain at least 3 feet distance, and avoid close contact with people who are experiencing cough, fever or sneeze. </li>
+                            <li id="center-3">Avoid touching your face, mouth and nose. </li>
+                            <li id="center-3">Avoid going out frequently. If it is necessary, cover your nose and mouth with a mask when going out. </li>
+                        </ul>
+                    </div>
                 </div>
               </div>
             </div>
@@ -184,6 +203,28 @@
           <div> <!--DO NOT REMOVE THIS ADDITIONAL DIV. THIS FIXES A BUG IN CHARTJS-->
             <canvas id="time-series-graph-prediction" height="300" class="details-graph"></canvas>
           </div>
+        </div>
+      </div>
+
+      <div class="row details-section">
+        <div class="acknowledgements-heading">
+            Acknowledgements
+            <div class="content2"> <!--edit resources names, add them as hyperlink if possible -->
+            This dashboard uses the following resources for data collection regarding COVID-19.
+            <ul>
+                <li>Resource 1</li>
+                <li>Resource 2</li>
+                <li> Resource 3 </li>
+            </ul>
+            The dashboard was created by Habib University faculty and students. The contributors are, 
+            <br> <!--Add any names that I may have forgot -->
+            <ul style="list-style-type: none; padding: 0;">
+                <li> <strong> The faculty members who supervised the project, </strong> Dr. Sarah Hasnain and Dr. Abdul Samad. </li> 
+                <li> <strong> Data collection team, </strong> Amna Shoaib. </li>
+                <li> <strong> Front-end team, </strong> Owais bin Asad, Anisa Aisha Ahmed, and Maheen Anees. </li>
+                <li> <strong> Back-end team, </strong> Atif Mehmood, Sara Mehmood, and Saman Gaziani. </li> 
+            </ul>
+            </div>
         </div>
       </div>
 

@@ -38,10 +38,13 @@ path {
     transition-duration: 0.25s;
 }
 
-#PK-SD:hover, #PK-BA:hover, #PK-GB:hover, #PK-IS:hover, #PK-AK:hover, #PK-KP:hover, #PK-PB:hover, #PK-TA:hover {
-    /* fill: #8C0618; */
-    /* fill: #DC5356; */
-    fill: #F0CB69;
+
+#PK-IS {
+  fill: #d4d4d4;
+}
+
+#PK-AK {
+fill: #585858;
 }
 
 .buttons-heading {

@@ -556,6 +556,49 @@ function highlight_release(e) {
     }
 }
 
+function expand_buttons(e){
+	var emergency_content = document.getElementById("emergency_content");
+	var symptoms_content = document.getElementById("symptoms_content");
+	var precautions_content = document.getElementById("precautions_content");
+	
+	
+	if (e.target.id === "emergency"){
+		if (symptoms_content.style.display !== "none"){
+			symptoms_content.style.display = "none"
+		}
+		if (precautions_content.style.display !== "none"){
+			precautions_content.style.display = "none"
+		}
+		emergency_content.style.display = "block";
+	}
+	else if (e.target.id === "symptoms"){
+		if (emergency_content.style.display !== "none"){
+			emergency_content.style.display = "none"
+		}
+		if (precautions_content.style.display !== "none"){
+			precautions_content.style.display = "none"
+		}
+		symptoms_content.style.display = "block"
+	}
+	else if (e.target.id === "precautions"){
+		if (emergency_content.style.display !== "none"){
+			emergency_content.style.display = "none"
+		}
+		if (symptoms_content.style.display !== "none"){
+			symptoms_content.style.display = "none"
+		}
+		precautions_content.style.display = "block"
+	}
+	
+}
+var emergency = document.getElementById("emergency_content");
+emergency.style.display = "block";
+center_list.style.listStyleType = 'none';
+center_1.textContent = "";
+center_2.textContent = "";
+center_3.textContent = "";
+
+
 setInterval(update_tip_text, 5000);
 
 function startIntro(){
