@@ -26,6 +26,7 @@ Object.freeze(zones);
 
 // Global selectors
 var last_selected_zone;
+var selected_expansion_button;
 var total_infected = document.getElementById("total-infected");
 var most_infected_city = document.getElementById("most-infected-city")
 var center_1 = document.getElementById("center-1");
@@ -557,6 +558,8 @@ function highlight_release(e) {
 }
 
 function expand_buttons(e){
+    selected_expansion_button = document.getElementById(e.target.id);
+
 	var emergency_content = document.getElementById("emergency_content");
 	var symptoms_content = document.getElementById("symptoms_content");
 	var precautions_content = document.getElementById("precautions_content");
@@ -588,7 +591,9 @@ function expand_buttons(e){
 			symptoms_content.style.display = "none"
 		}
 		precautions_content.style.display = "block"
-	}
+    }
+    
+    selected_expansion_button.style.fill = '#fcb830';
 	
 }
 var emergency = document.getElementById("emergency_content");
