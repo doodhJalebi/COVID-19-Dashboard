@@ -72,6 +72,13 @@ fill: #585858;
   color: black !important;
 }
 
+#emergency, #symptoms, #precautions {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#trend-section {
+  background-color: #8C0618;
+}
 
 .content {
   padding-top: 1%;
@@ -122,14 +129,12 @@ fill: #585858;
 .content2 {
   padding-top: 3%;
   padding-bottom: 3%;
-  padding-left: 5%;
-  padding-right: 5%;
-  
-  
   font-size: 16px;
   text-align: left;
-  
-  /*background-color: #5e1000;*/
+}
+
+.left-col {
+  padding-right: 50px;
 }
 
 table td {
@@ -139,12 +144,15 @@ table td {
 }
 
 table, th, tr, td {
+  border-collapse: separate;
   width: 100%;
 }
 
 table th {
   text-align: center;
   padding-bottom: 8%;
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .general-info-seg {
@@ -161,12 +169,18 @@ table th {
 }
 
 .details-section {
-  margin-top: 1%;
+  margin-top: 2%;
   margin-bottom: 1%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 .details-graph {
-  margin-bottom: 2%;
-  margin-top: 2%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#trend-graph, #prediction-graph {
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 #footer-text {

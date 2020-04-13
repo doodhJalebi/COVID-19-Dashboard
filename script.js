@@ -236,12 +236,12 @@ var prediction_graph_config = {
     data: {
         datasets: [{
             label: 'Prediction of Cases',
-            pointBackgroundColor: '#8c0618',
-            pointBorderColor: '#8c0618',
+            pointBackgroundColor: '#c96044',
+            pointBorderColor: '#c96044',
             pointRadius: 5,
             fill: false,
-            borderColor: '#8c0618',
-            backgroundColor: '#8C0618',
+            borderColor: '#c96044',
+            backgroundColor: '#c96044',
             data: [
                 {
                     x: today.setDate(today.getDate() + 2),
