@@ -26,6 +26,7 @@ Object.freeze(zones);
 
 // Global selectors
 var last_selected_zone;
+var selected_expansion_button;
 var total_infected = document.getElementById("total-infected");
 var most_infected_city = document.getElementById("most-infected-city")
 var center_1 = document.getElementById("center-1");
@@ -54,10 +55,14 @@ var donut_config = {
             data: zone_wise_donut_data[zones.PK], // Displays Pakistan wide info by default.
             backgroundColor: [
                 //'#ff482b', peach
-                '#f57200',
+                /*'#f57200',
                 '#f5d400',
                 '#50bf0f',
-                '#d10d0d'
+                '#d10d0d'*/
+                '#d56f28',
+                '#b74e65',
+                '#908834',
+                '#c84533'
             ],
         }],
         labels: ['Confirmed Cases', 'Active Cases', 'Recovered', 'Deceased']
@@ -83,12 +88,12 @@ var trend_chart_config = {
     data: {
         datasets: [{
                 label: 'Recovered Cases',
-                pointBackgroundColor: '#50bf0f',
-                pointBorderColor: '#000000',
+                pointBackgroundColor: '#908834',
+                pointBorderColor: '#908834',
                 pointRadius: 4,
-                fill: true,
-                backgroundColor: '#50bf0f',
-                borderColor: '#000000',
+                fill: false,
+                backgroundColor: '#908834',
+                borderColor: '#908834',
                 data: [
                     {
                         x: new Date(2019, 11, 25),
@@ -107,16 +112,16 @@ var trend_chart_config = {
                         y: 12
                     }
                 ],
-                borderWidth: 1
+                borderWidth: 3
             },  
             {
                 label: 'Active Cases',
-                pointBackgroundColor: '#f5d400',
-                pointBorderColor: '#000000',
+                pointBackgroundColor: '#b74e65',
+                pointBorderColor: '#b74e65',
                 pointRadius: 4,
-                fill: true,
-                backgroundColor: '#f5d400',
-                borderColor: '#000000',
+                fill: false,
+                backgroundColor: '#b74e65',
+                borderColor: '#b74e65',
                 data: [
                     {
                         x: new Date(2019, 11, 25),
@@ -135,16 +140,16 @@ var trend_chart_config = {
                         y: 50
                     }
                 ],
-                borderWidth: 1
+                borderWidth: 3
             },
             {
                 label: 'Deceased Cases',
-                pointBackgroundColor: '#d10d0d',
-                pointBorderColor: '#000000',
+                pointBackgroundColor: '#c84533',
+                pointBorderColor: '#c84533',
                 pointRadius: 4,
-                fill: true,
-                backgroundColor: '#d10d0d',
-                borderColor: '#000000',
+                fill: false,
+                backgroundColor: '#c84533',
+                borderColor: '#c84533',
                 data: [
                     {
                         x: new Date(2019, 11, 25),
@@ -163,16 +168,16 @@ var trend_chart_config = {
                         y: 60
                     }
                 ],
-                borderWidth: 1
+                borderWidth: 3
             },
             {
             label: 'Confirmed Cases',
-            pointBackgroundColor: '#f57200',
-            pointBorderColor: '#000000',
+            pointBackgroundColor: '#d56f28',
+            pointBorderColor: '#d56f28',
             pointRadius: 4,
-            fill: true,
-            backgroundColor: '#f57200',
-            borderColor: '#000000',
+            fill: false,
+            backgroundColor: '#d56f28',
+            borderColor: '#d56f28',
             data: [
                 {
                     x: new Date(2019, 11, 25),
@@ -191,7 +196,7 @@ var trend_chart_config = {
                     y: 2650
                 }
             ],
-            borderWidth: 1
+            borderWidth: 3
         }]
     },
     options: {
@@ -231,11 +236,12 @@ var prediction_graph_config = {
     data: {
         datasets: [{
             label: 'Prediction of Cases',
-            pointBackgroundColor: '#F0CB69',
-            pointBorderColor: '#F0CB69',
+            pointBackgroundColor: '#c96044',
+            pointBorderColor: '#c96044',
             pointRadius: 5,
-            fill: true,
-            backgroundColor: '#8C0618',
+            fill: false,
+            borderColor: '#c96044',
+            backgroundColor: '#c96044',
             data: [
                 {
                     x: today.setDate(today.getDate() + 2),
@@ -260,7 +266,7 @@ var prediction_graph_config = {
                     y: 4800
                 }
             ],
-            borderWidth: 1
+            borderWidth: 3
         }]
     },
     options: {
@@ -310,7 +316,17 @@ function popup(e) {
 	} */
 	
     //tooltip.style.display = "block";
-    
+    if (e.target.id == 'PK-KP') {
+        if (last_selected_zone == 'PK-TA') {
+            last_selected_zone = 'PK-KP';
+        }
+    }
+
+    else if (e.target.id == 'PK-TA') {
+        if (last_selected_zone == 'PK-KP') {
+            last_selected_zone = 'PK-TA';
+        }
+    }
     
     if (last_selected_zone == e.target.id) {
         console.log("Deselecting " + last_selected_zone);
@@ -435,7 +451,18 @@ function popup(e) {
         for (x of all_provinces) {
             x.style.fill = '#000000';
         }
-        selected_province.style.fill = '#F0CB69';
+        
+        document.getElementById('PK-IS').style.fill = '#d4d4d4';
+        document.getElementById('PK-AK').style.fill = '#585858';
+
+
+        if (selected_province.id == 'PK-KP' || selected_province.id == 'PK-TA') {
+            document.getElementById('PK-KP').style.fill = '#F0CB69';
+            document.getElementById('PK-TA').style.fill = '#F0CB69';
+        }
+        else {
+            selected_province.style.fill = '#F0CB69';
+        }
     }
 };
 
@@ -483,18 +510,161 @@ function reset_to_default() {
     for (x of all_provinces) {
         x.style.fill = '#000000';
     }
+
+    document.getElementById('PK-IS').style.fill = '#d4d4d4';
+    document.getElementById('PK-AK').style.fill = '#585858';
+    
     last_selected_zone = "PK";
     console.log("Reset complete");
 }
 
 function highlight(e) {
-    document.getElementById(e.target.id).style.fill = '#F0CB69';
-}
-
-function highlight_release(e) {
-    if (e.target.id !== last_selected_zone) {
-        document.getElementById(e.target.id).style.fill = '#000000';
+    if (e.target.id == 'PK-TA' || e.target.id == 'PK-KP') {
+        document.getElementById('PK-KP').style.fill = '#F0CB69';
+        document.getElementById('PK-TA').style.fill = '#F0CB69';
+    }
+    else {
+        document.getElementById(e.target.id).style.fill = '#F0CB69';
     }
 }
 
+function highlight_release(e) {
+    if (e.target.id == 'PK-KP') {
+        if (last_selected_zone == 'PK-TA') {
+            last_selected_zone = 'PK-KP';
+        }
+    }
+
+    else if (e.target.id == 'PK-TA') {
+        if (last_selected_zone == 'PK-KP') {
+            last_selected_zone = 'PK-TA';
+        }
+    }
+
+    if (e.target.id !== last_selected_zone) {
+        if (e.target.id == 'PK-KP' || e.target.id == 'PK-TA') {
+            document.getElementById('PK-KP').style.fill = '#000000';
+            document.getElementById('PK-TA').style.fill = '#000000';
+        }
+        else if (e.target.id == 'PK-IS') {
+            document.getElementById('PK-IS').style.fill = '#d4d4d4';
+        }
+        else if (e.target.id == 'PK-AK') {
+            document.getElementById('PK-AK').style.fill = '#585858';
+        }
+        else {
+            document.getElementById(e.target.id).style.fill = '#000000';
+        }
+    }
+}
+
+function expand_buttons(e){
+    console.log("EXPAND BUTTONS CALLED");
+    console.log(e.target.id);
+    selected_expansion_button = document.getElementById(e.target.id);
+
+	var emergency_content = document.getElementById("emergency_content");
+	var symptoms_content = document.getElementById("symptoms_content");
+	var precautions_content = document.getElementById("precautions_content");
+	
+	
+	if (e.target.id === "emergency"){
+		if (symptoms_content.style.display !== "none"){
+			symptoms_content.style.display = "none"
+		}
+		if (precautions_content.style.display !== "none"){
+			precautions_content.style.display = "none"
+		}
+		emergency_content.style.display = "block";
+	}
+	else if (e.target.id === "symptoms"){
+		if (emergency_content.style.display !== "none"){
+			emergency_content.style.display = "none"
+		}
+		if (precautions_content.style.display !== "none"){
+			precautions_content.style.display = "none"
+		}
+		symptoms_content.style.display = "block"
+	}
+	else if (e.target.id === "precautions"){
+		if (emergency_content.style.display !== "none"){
+			emergency_content.style.display = "none"
+		}
+		if (symptoms_content.style.display !== "none"){
+			symptoms_content.style.display = "none"
+		}
+		precautions_content.style.display = "block"
+    }
+}
+var emergency = document.getElementById("emergency_content");
+emergency.style.display = "block";
+center_list.style.listStyleType = 'none';
+center_1.textContent = "";
+center_2.textContent = "";
+center_3.textContent = "";
+
+
 setInterval(update_tip_text, 5000);
+
+function startIntro(){
+    var intro = introJs();
+      intro.setOptions({
+        steps: [
+          { 
+            element: '#navbar',
+            intro: "Welcome to the COVID19 Dashboard. Click on Next to start the tutorial."
+          },
+          {
+            element: '#navbar',
+            intro: "The dashboard is divided into 3 sections."
+          },
+          {
+            element: '#map',
+            intro: "This is the map. You can click on any province to see its data.",
+            position: 'right'
+          },
+          {
+            element: '#stat-section',
+            intro: 'This is the general statistics section. When you click on a province on the map, the data will be shown here.',
+            position: 'left'
+          },
+          {
+            element: '#donut',
+            intro: "This doughnut chart shows current numbers for confirmed, active, recorvered, and deceased cases. Hover over any colored segment to see the exact number of cases.",
+            position: 'left'
+          },
+          {
+            element: '#donut',
+            intro: 'You can also click on any of the names to remove them from the chart. Try clicking on Confirmed Cases to remove it. You can always click on them again to bring them back!',
+            position: 'left'
+          },
+          {
+              element: '#emergency-info',
+              intro: 'This section has contact information for different hospitals/health centers in the province you selected.',
+              position: 'right'
+          },
+          {
+              element: '#trend-section',
+              intro: 'This is where you can see the trends for each type of case as well a prediction for the next two weeks!',
+              position: 'top'
+          },
+          {
+              element: '#trend-graph',
+              intro: 'This graph shows the trends for the same cases as the doughnut chart. Just like the doughnut chart, you can click on any of the names to remove them from the graph. Click on them again to get them back!',
+              position: 'top'
+          },
+          {
+              element: '#prediction-graph',
+              intro: 'This graph shows a prediction for the number of cases for the next 14 days. Keep in mind that this only a prediction.',
+              position: 'top'
+          },
+          {
+              element: '#prediction-graph',
+              intro: 'And that is all you need to know to use this dashboard. Stay safe, stay in-doors! Click on Done to finish the tutorial.',
+              position: 'top'
+          }
+        ]
+      });
+      intro.setOption('showProgress', true);
+      intro.start();
+  }
