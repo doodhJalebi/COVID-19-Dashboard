@@ -341,3 +341,33 @@ input[type=checkbox] {
   color: #8C0618;
   font-weight: 600;
 }
+
+.styled-input{
+	border: none;
+	border-bottom: 2px solid #8C0618;
+	margin-left: 2%;
+}
+
+.form-control {
+  display:inline-block;
+  width:90%;
+  margin: 2%;
+}
+
+#submit-form{
+	background-color: #8C0618;
+	border: #8C0618;
+}
+
+#submit-form:hover{
+	background-color: #6e0413;
+	border: #8C0618;
+}
+
+#submit-form:checked, #submit-form:active, #submit-form:focus{
+	background-color: #6e0413;
+	border-color: #8C0618;
+	box-shadow: inset 0 5px 5px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+	
+  
+}
