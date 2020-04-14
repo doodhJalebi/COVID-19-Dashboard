@@ -18,7 +18,8 @@
     <!--IntroJS CSS-->
     <link rel="stylesheet" href="./introjs-main.css">
     <link rel="stylesheet" href="./introjs-dark.css">
-    
+	<!--Font Awesome CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>COVID19 Dashboard</title>
   </head>
   
@@ -26,12 +27,48 @@
 
 	<body>
 		<nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #8C0618;">
-      <a class="navbar-brand" href="#" id="navbar" onclick="startIntro()"><b>COVID19 Dashboard</b></a>
-      <div id="tip" class="ml-auto">
-        <span id="tip-text"><i>Tip: Click on a province to populate the page with its info.</i></span>
-      </div>
+			<a class="navbar-brand " href="#" id="navbar"><b>COVID19 Dashboard</b></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active" onclick="startIntro()"><a class="nav-link" href="#">Tutorial</a></li>
+					<li class="nav-item active" data-toggle="modal" data-target="#exampleModal"><a class="nav-link" href="#">Feedback</a></li>
+				</ul>
+			</div>
+		<div id="tip" class="ml-auto">
+			<span id="tip-text"><i>Tip: Click on a province to populate the page with its info.</i></span>
+		</div>		
     </nav>
-
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="feedback-modal">Feedback Form</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="md-form form-sm">
+						<i class="fa fa-user-circle fa-lg prefix"></i>
+						<input type="text" id="form-user" class="form-control form-control-sm styled-input" placeholder="Your name">
+					</div>
+					<div class="md-form form-sm">
+						<i class="fa fa-envelope fa-lg prefix"></i>
+						<input type="text" id="form-email" class="form-control form-control-sm styled-input" placeholder="Your email">
+					</div>
+					<div class="md-form form-sm" style="display:flex">
+						<i class="fa fa-comments fa-lg prefix"></i>
+						<textarea type="text" class="form-control form-control-sm styled-input" id="form-message" rows="3" placeholder="Your feedback"></textarea>
+					</div>
+				</div>
+				<div class="modal-footer border-top-0 d-flex justify-content-center" >
+					<button type="button" id="submit-form" class="btn btn-primary"data-dismiss="modal">Submit</button>
+					
+				</div>
+			</div>
+		</div>
+	</div>
 
 
 
