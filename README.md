@@ -16,4 +16,4 @@ You can find the site running <a href="http://doodhjalebi.github.io" target="_bl
 ### v2.0
 - Urdu support
 - Tutorial in Urdu
-- About section with references and credits
+- ~~About section with references and credits~~
