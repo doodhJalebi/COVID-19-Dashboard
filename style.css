@@ -371,3 +371,12 @@ input[type=checkbox] {
 	
   
 }
+
+.tutorial-modal-button {
+  background-color: #8C0618;
+  color: white;
+}
+
+.tutorial-modal-button:hover {
+  background-color: #fcc149;
+}

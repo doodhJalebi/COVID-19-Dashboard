@@ -70,7 +70,28 @@
 				</div>
 			</div>
 		</div>
-	</div>
+  </div>
+  
+
+  <div class="modal fade" id="tutorial_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Welcome to the Habib University's COVID-19 Dashboard!</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <span>Do you want to take a tutorial first?</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary tutorial-modal-button" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary tutorial-modal-button" data-dismiss="modal" onclick="startIntro()">Start Tutorial</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 
 
@@ -192,7 +213,7 @@
               <div class="col-12">
 
 
-                <div class="btn-group btn-group-toggle buttons-heading" data-toggle="buttons">
+                <div class="btn-group btn-group-toggle buttons-heading" data-toggle="buttons" id="info-sec-buttons">
                   <label class="btn btn-secondary active custom">
                     <input type="radio" name="options" id="emergency" autocomplete="off" checked onclick="expand_buttons(event)">Emergency Contact Info
                   </label>
@@ -208,7 +229,7 @@
 
 
 
-                <div class="row no-gutters">
+                <div class="row no-gutters" id="info-sec">
                   <div class="col-12">
                     <div id="emergency_content" class="content">
                       <ul id="center-list">

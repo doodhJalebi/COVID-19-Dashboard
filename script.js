@@ -601,8 +601,13 @@ function startIntro(){
             position: 'left'
           },
           {
-              element: '#emergency-info',
+              element: '#info-sec',
               intro: 'This section has contact information for different hospitals/health centers in the province you selected.',
+              position: 'right'
+          },
+          {
+              element: '#info-sec-buttons',
+              intro: 'In addition to contact info, you can use these buttons to view the precautions and symtoms of COVID-19 as well.',
               position: 'right'
           },
           {
@@ -616,12 +621,17 @@ function startIntro(){
               position: 'top'
           },
           {
+              element: '#trend_slider',
+              intro: 'Use this slider to set how far back you want to see the trends from! You can go as far back as the beginning of the pandemic.',
+              position: 'top'
+          },
+          {
               element: '#prediction-graph',
               intro: 'This graph shows a prediction for the number of cases for the next 14 days. Keep in mind that this only a prediction.',
               position: 'top'
           },
           {
-              element: '#prediction-graph',
+              element: '#navbar',
               intro: 'And that is all you need to know to use this dashboard. Stay safe, stay in-doors! Click on Done to finish the tutorial.',
               position: 'top'
           }
@@ -635,3 +645,5 @@ var trend_slider = document.getElementById('trend_slider');
 trend_slider.oninput = function() {
     console.log(this.value);
 }
+
+$('#tutorial_modal').modal();
