@@ -8,10 +8,9 @@ You can find the site running <a href="http://doodhjalebi.github.io" target="_bl
 ### v1.0
 - ~~Basic tutorial~~
 - ~~Better colors~~
-- Some city data
+- ~~Some city data~~
 - ~~Local deployement~~
-- Feedback option
-- Language selection
+- ~~Feedback option~~
 - ~~nationwide cases, nationwide recoveries, nationwide deceased~~
 
 ### v2.0
