@@ -77,7 +77,8 @@ fill: #585858;
 }
 
 #trend-section {
-  background-color: #8C0618;
+  background-color: #c8a95f;
+  margin-bottom: 15%;
 }
 
 .content {
@@ -97,7 +98,6 @@ fill: #585858;
 .acknowledgements-row {
   background-color: #8C0618;
   margin-top: 2%;
-  margin-bottom: 2%;
 }
 
 .acknowledgements-heading {
@@ -112,11 +112,12 @@ fill: #585858;
   text-align: center;
 }
 
-.contributors-heading {
+.contributors {
   padding-top: 2%;
+  padding-bottom: 2%;
   
-  background-color: #ffffff;
-  color: #8C0618;
+  background-color: #c8a95f;
+  color: #ffffff;
   font-size: 20px;
   text-align: center;
   margin-bottom: 2%;
@@ -126,11 +127,14 @@ fill: #585858;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.content2 {
-  padding-top: 3%;
-  padding-bottom: 3%;
-  font-size: 16px;
-  text-align: left;
+#contributor-heading {
+  font-weight: 700;
+  font-size: 18px;
+}
+.contributors-content {
+  text-align: center;
+  font-size: 12px;
+  padding-top: 1%;
 }
 
 .left-col {
