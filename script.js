@@ -83,6 +83,36 @@ var donut_chart = new Chart(donut_ctx, donut_config);
 
 // Confirmed Cases Graph
 var ctx1 = document.getElementById('time-series-graph-confirmed-cases').getContext('2d');
+var trend_data = [
+    [
+        {x: new Date(2019, 11, 25), y: 2}, 
+        {x: new Date(2020, 0, 25), y: 3}, 
+        {x: new Date(2020, 1, 25), y: 6}, 
+        {x: new Date(2020, 2, 25), y: 10}, 
+        {x: new Date(), y: 12}
+    ], // Recovered
+    [
+        {x: new Date(2019, 11, 25), y: 2},
+        {x: new Date(2020, 0, 25), y: 5},
+        {x: new Date(2020, 1, 25), y: 10},
+        {x: new Date(2020, 2, 25), y: 25},
+        {x: new Date(), y: 50}
+    ], // Active
+    [
+        {x: new Date(2019, 11, 25), y: 2},
+        {x: new Date(2020, 0, 25), y: 10},
+        {x: new Date(2020, 1, 25), y: 50},
+        {x: new Date(2020, 2, 25), y: 55},
+        {x: new Date(), y: 60}
+    ], // Deceased
+    [
+        {x: new Date(2019, 11, 25), y: 20},
+        {x: new Date(2020, 0, 25), y: 50},
+        {x: new Date(2020, 1, 25), y: 249},
+        {x: new Date(2020, 2, 25), y: 500},
+        {x: new Date(), y: 2650}
+    ]   // Confirmed
+];
 var trend_chart_config = {
     type: 'line',
     data: {
@@ -94,24 +124,7 @@ var trend_chart_config = {
                 fill: false,
                 backgroundColor: '#908834',
                 borderColor: '#908834',
-                data: [
-                    {
-                        x: new Date(2019, 11, 25),
-                        y: 2
-                    },{
-                        x: new Date(2020, 0, 25),
-                        y: 3
-                    },{
-                        x: new Date(2020, 1, 25),
-                        y: 6
-                    },{
-                        x: new Date(2020, 2, 25),
-                        y: 10
-                    },{
-                        x: new Date(),
-                        y: 12
-                    }
-                ],
+                data: trend_data[0],
                 borderWidth: 3
             },  
             {
@@ -122,24 +135,7 @@ var trend_chart_config = {
                 fill: false,
                 backgroundColor: '#b74e65',
                 borderColor: '#b74e65',
-                data: [
-                    {
-                        x: new Date(2019, 11, 25),
-                        y: 2
-                    },{
-                        x: new Date(2020, 0, 25),
-                        y: 5
-                    },{
-                        x: new Date(2020, 1, 25),
-                        y: 10
-                    },{
-                        x: new Date(2020, 2, 25),
-                        y: 25
-                    },{
-                        x: new Date(),
-                        y: 50
-                    }
-                ],
+                data: trend_data[1],
                 borderWidth: 3
             },
             {
@@ -150,24 +146,7 @@ var trend_chart_config = {
                 fill: false,
                 backgroundColor: '#c84533',
                 borderColor: '#c84533',
-                data: [
-                    {
-                        x: new Date(2019, 11, 25),
-                        y: 2
-                    },{
-                        x: new Date(2020, 0, 25),
-                        y: 10
-                    },{
-                        x: new Date(2020, 1, 25),
-                        y: 50
-                    },{
-                        x: new Date(2020, 2, 25),
-                        y: 55
-                    },{
-                        x: new Date(),
-                        y: 60
-                    }
-                ],
+                data: trend_data[2],
                 borderWidth: 3
             },
             {
@@ -178,24 +157,7 @@ var trend_chart_config = {
             fill: false,
             backgroundColor: '#d56f28',
             borderColor: '#d56f28',
-            data: [
-                {
-                    x: new Date(2019, 11, 25),
-                    y: 20
-                },{
-                    x: new Date(2020, 0, 25),
-                    y: 50
-                },{
-                    x: new Date(2020, 1, 25),
-                    y: 249
-                },{
-                    x: new Date(2020, 2, 25),
-                    y: 500
-                },{
-                    x: new Date(),
-                    y: 2650
-                }
-            ],
+            data: trend_data[3],
             borderWidth: 3
         }]
     },
@@ -667,4 +629,9 @@ function startIntro(){
       });
       intro.setOption('showProgress', true);
       intro.start();
-  }
+}
+
+var trend_slider = document.getElementById('trend_slider');
+trend_slider.oninput = function() {
+    console.log(this.value);
+}
